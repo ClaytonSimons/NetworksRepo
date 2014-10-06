@@ -1,0 +1,11 @@
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\bin\Release\NetworksLab1Client.exe.config
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\bin\Release\NetworksLab1Client.exe.manifest
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\bin\Release\NetworksLab1Client.application
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\bin\Release\NetworksLab1Client.exe
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\bin\Release\NetworksLab1Client.pdb
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Release\NetworksLab1Client.Properties.Resources.resources
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Release\NetworksLab1Client.csproj.GenerateResource.Cache
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Release\NetworksLab1Client.exe.manifest
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Release\NetworksLab1Client.application
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Release\NetworksLab1Client.exe
+C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Release\NetworksLab1Client.pdb
