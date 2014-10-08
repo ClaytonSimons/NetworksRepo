@@ -19,10 +19,12 @@ namespace NetworksLab1Client
     public partial class ClientInterface : Form
     {
         ChatClient client;
+        String serverHost;
         public ClientInterface()
         {
+            serverHost = "SCUTULATUS";
             InitializeComponent();
-            client = new ChatClient("PRINCEofPERSIA",this);
+            client = new ChatClient(serverHost, this);
             if (client.start())
                 updateChatBox("connected!");
             else
@@ -34,6 +36,16 @@ namespace NetworksLab1Client
                 ChatBoxRTxt.AppendText(msg);
             else
                 ChatBoxRTxt.AppendText("\n" + msg);
+        }
+
+        public void updateUsernameRTxt(String msg)
+        {
+            UsernameRTxt.ResetText();
+            UsernameRTxt.AppendText(msg);
+        }
+        public String getUsernameRTxt()
+        {
+            return UsernameRTxt.Text.ToString();
         }
 
         private void Send(object sender, EventArgs e)
@@ -63,7 +75,7 @@ namespace NetworksLab1Client
         {
             String tempname = client.getUsernameFromServer();
             client.disconnect();
-            client = new ChatClient("PRINCEofPERSIA", this);
+            client = new ChatClient(serverHost, this);
             client.setUsername(tempname);
             if (client.start())
             {

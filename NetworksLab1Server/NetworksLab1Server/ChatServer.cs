@@ -13,12 +13,17 @@ namespace NetworksLab1Server
     class ChatServer
     {
         private List<User> users;
+        private List<User> toRemove;
         private TcpListener server;
+        private Thread cleanUpThread;
         private int portNumber;
+        private int userNumber;
         public ChatServer()
         {
+            userNumber = 0;
             portNumber = 1711;
             users = new List<User>();
+            toRemove = new List<User>();
             //The port number standard to this application
             server = new TcpListener(portNumber);
         }
@@ -26,6 +31,8 @@ namespace NetworksLab1Server
         {
             try
             {
+                cleanUpThread = new Thread(new ThreadStart(cleanUp));
+                cleanUpThread.Start();
                 //starts listening
                 server.Start();
 
@@ -49,7 +56,28 @@ namespace NetworksLab1Server
                 server.Stop();
             }
         }
+        private void cleanUp()
+        {
+            while (true)
+            {
 
+                if (users.Count > 0 && toRemove.Count > 0)
+                {
+                    Monitor.Enter(users);
+                    Monitor.Enter(toRemove);
+                    foreach (User user in toRemove)
+                    {
+                        users.Remove(user);
+
+                    }
+                    toRemove.Clear();
+                    Monitor.Exit(toRemove);
+                    Monitor.Exit(users);
+                }
+
+                Thread.Yield();
+            }
+        }
         public void SendMessage(String msg, User from)
         {
             foreach (User user in users)
@@ -67,7 +95,11 @@ namespace NetworksLab1Server
             Console.WriteLine("User: " + user.getName() + " added");
             Monitor.Exit(users);
         }
-        public void remove(User user)
+        public void markForDeath(User user)
+        {
+            toRemove.Add(user);
+        }
+        private void remove(User user)
         {
             Monitor.Enter(users);
             users.Remove(user);
@@ -79,33 +111,20 @@ namespace NetworksLab1Server
         }
         public String assignName()
         {
-            StringBuilder name = new StringBuilder();
-            int num = 0;
-            name.Append("User");
+            String answer;
+            userNumber++;
+            answer = "User" + userNumber.ToString();
             bool found = false;
             foreach (User user in users)
             {
-                if (name.ToString() == user.getName())
+                if (answer == user.getName())
                 {
                     found = true;
-                    name.Append(num.ToString());
+                    userNumber++;
+                    answer = "User" + userNumber.ToString();
                 }
             }
-            while (found)
-            {
-                foreach (User user in users)
-                {
-                    if (name.ToString() == user.getName())
-                    {
-                        name.Remove(name.Length, num.ToString().Length);
-                        num++;
-                        name.Append(num.ToString().Length);
-                        continue;
-                    }
-                }
-                found = false;
-            }
-            return name.ToString();
+            return answer;
         }
     }
 }

@@ -23,3 +23,16 @@ Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug
 Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.exe.manifest
 Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.application
 z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.ClientInterface.resources
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.exe.config
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.exe
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.pdb
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.exe.manifest
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.application
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.exe
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.pdb
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.csprojResolveAssemblyReference.cache
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.ClientInterface.resources
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.Properties.Resources.resources
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.csproj.GenerateResource.Cache
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.exe.manifest
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.application

@@ -16,7 +16,7 @@ namespace NetworksLab1Server
         private StreamReader streamReader;
         private StreamWriter streamWriter;
         private ChatServer chatServer;
-        Thread serverThread;
+        private Thread serverThread;
         public User(TcpClient c,ChatServer cs)
         {
             chatServer = cs;
@@ -31,19 +31,22 @@ namespace NetworksLab1Server
             try
             {
                 String incoming = streamReader.ReadLine();
-                while (incoming != "/quit" && incoming != "/q")
+                bool quit = false;
+                while (incoming != "/quit" && incoming != "/q" && quit == false)
                 {
                     switch(incoming)
                     {
                         case "/NameUpdate":
-                            streamWriter.WriteLine("Name?");
+                            streamWriter.WriteLine("/Name?");
+                            streamWriter.Flush();
                             username = streamReader.ReadLine();
                             break;
                         case "/Disconnect":
-                            purge();
-                            chatServer.remove(this);
+                            quit = true;
                             break;
                         case "/MyName":
+                            streamWriter.WriteLine("/MyName");
+                            streamWriter.Flush();
                             streamWriter.WriteLine(username);
                             streamWriter.Flush();
                             break;
@@ -51,7 +54,6 @@ namespace NetworksLab1Server
                             Console.WriteLine("Message received: " + incoming);
                             //streamWriter.WriteLine(incoming);
                             chatServer.SendMessage(incoming,this);
-                            streamWriter.Flush();
                             Console.WriteLine("Message Sent to chat room: " + incoming);
                             break;
                     }
@@ -62,7 +64,7 @@ namespace NetworksLab1Server
             {
                 Console.WriteLine(e + " " + e.StackTrace);
             }
-            chatServer.remove(this);
+            chatServer.markForDeath(this);
             purge();
         }
         public void write(String message,User user)
@@ -74,7 +76,7 @@ namespace NetworksLab1Server
         {
             try
             {
-                serverThread.Abort();
+                
                 streamReader.Close();
                 streamWriter.Close();
                 client.Close();
@@ -92,6 +94,10 @@ namespace NetworksLab1Server
         public String getName()
         {
             return username;
+        }
+        public Thread getServerThread()
+        {
+            return serverThread;
         }
     }
 }

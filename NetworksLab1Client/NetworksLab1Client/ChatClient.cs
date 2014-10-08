@@ -17,6 +17,7 @@ namespace NetworksLab1Client
         String username;
         String hostName;
         Thread readingThread;
+        String incomeMessage;
         ClientInterface clientInterface;
         public ChatClient(String host, ClientInterface inter)
         {
@@ -47,6 +48,20 @@ namespace NetworksLab1Client
                     streamReader.Close();
                 //assign new stream
                 streamReader = new StreamReader(ns);
+
+                //start the read thread
+                readingThread = new Thread(new ThreadStart(read));
+                readingThread.Start();
+
+                //Get assigned name
+                string current = clientInterface.getUsernameRTxt();
+                if (current == "")
+                {
+                    setUsername(getUsernameFromServer());
+                    clientInterface.updateUsernameRTxt(username);
+                }
+                else
+                    setUsername(current);
             }
             catch (Exception e)
             {
@@ -54,9 +69,7 @@ namespace NetworksLab1Client
                 disconnect();
                 return false;
             }
-                //start the read thread
-            readingThread = new Thread(new ThreadStart(read));
-            readingThread.Start();
+
             return true;
         }
         public void disconnect()
@@ -96,13 +109,19 @@ namespace NetworksLab1Client
                 try
                 {
                     msg = streamReader.ReadLine();
-                    if (msg == "Name?")
+                    switch (msg)
                     {
-                        streamWriter.WriteLine(username);
-                        streamWriter.Flush();
+                        case "/Name?"://asking what our name is
+                            streamWriter.WriteLine(username);
+                            streamWriter.Flush();
+                            break;
+                        case"/MyName"://telling us what our name is
+                            incomeMessage = streamReader.ReadLine();
+                            break;
+                        default://got a message from other users
+                            clientInterface.updateChatBox(msg);
+                            break;
                     }
-                    else
-                        clientInterface.updateChatBox(msg);
                 }
                 catch (Exception e)
                 {
@@ -114,13 +133,9 @@ namespace NetworksLab1Client
         {
             try
             {
+
                 streamWriter.WriteLine("/NameUpdate");
                 streamWriter.Flush();
-                if (streamReader.ReadLine() == "Name?")
-                {
-                    streamWriter.WriteLine(username);
-                    streamWriter.Flush();
-                }
             }
             catch(Exception e)
             {
@@ -142,10 +157,13 @@ namespace NetworksLab1Client
             {
                 Debug.WriteLine(e.StackTrace);
             }
-            Monitor.Enter(this);
-            String answer = streamReader.ReadLine();
-            Monitor.Exit(this);
-            return answer;
+            while(true)
+                if (incomeMessage != null)
+                {
+                    String answer = incomeMessage;
+                    incomeMessage = null;
+                    return answer;
+                }
         }
     }
 }
