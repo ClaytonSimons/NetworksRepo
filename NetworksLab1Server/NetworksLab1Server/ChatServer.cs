@@ -33,8 +33,9 @@ namespace NetworksLab1Server
                 {
                     //
                     Console.WriteLine("Waiting for a connection.....");
+
                     //Accept new client
-                    users.Add(new User(server.AcceptTcpClient(),this));
+                    add(server.AcceptTcpClient());
                     //
                     Console.WriteLine("Connection accepted");
                 }
@@ -48,6 +49,7 @@ namespace NetworksLab1Server
                 server.Stop();
             }
         }
+
         public void SendMessage(String msg, User from)
         {
             foreach (User user in users)
@@ -56,13 +58,54 @@ namespace NetworksLab1Server
                     user.write(msg,from);
             }
         }
+        public void add(TcpClient client)
+        {
+            Monitor.Enter(users);
+            User user = new User(client, this);
+            user.setName(assignName());
+            users.Add(user);
+            Console.WriteLine("User: " + user.getName() + " added");
+            Monitor.Exit(users);
+        }
         public void remove(User user)
         {
+            Monitor.Enter(users);
             users.Remove(user);
+            Monitor.Exit(users);
         }
         ~ChatServer()
         {
             users.Clear();
+        }
+        public String assignName()
+        {
+            StringBuilder name = new StringBuilder();
+            int num = 0;
+            name.Append("User");
+            bool found = false;
+            foreach (User user in users)
+            {
+                if (name.ToString() == user.getName())
+                {
+                    found = true;
+                    name.Append(num.ToString());
+                }
+            }
+            while (found)
+            {
+                foreach (User user in users)
+                {
+                    if (name.ToString() == user.getName())
+                    {
+                        name.Remove(name.Length, num.ToString().Length);
+                        num++;
+                        name.Append(num.ToString().Length);
+                        continue;
+                    }
+                }
+                found = false;
+            }
+            return name.ToString();
         }
     }
 }

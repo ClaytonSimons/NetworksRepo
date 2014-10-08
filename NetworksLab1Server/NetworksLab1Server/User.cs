@@ -16,30 +16,45 @@ namespace NetworksLab1Server
         private StreamReader streamReader;
         private StreamWriter streamWriter;
         private ChatServer chatServer;
+        Thread serverThread;
         public User(TcpClient c,ChatServer cs)
         {
             chatServer = cs;
             client = c;
             streamReader = new StreamReader(client.GetStream());
             streamWriter = new StreamWriter(client.GetStream());
-            Thread serverThread = new Thread(new ThreadStart(loop));
+            serverThread = new Thread(new ThreadStart(loop));
             serverThread.Start();
         }
         public void loop()
         {
             try
             {
-                streamWriter.WriteLine("Name?");
-                streamWriter.Flush();
-                username = streamReader.ReadLine();
                 String incoming = streamReader.ReadLine();
                 while (incoming != "/quit" && incoming != "/q")
                 {
-                    Console.WriteLine("Message received: " + incoming);
-                    //streamWriter.WriteLine(incoming);
-                    chatServer.SendMessage(incoming,this);
-                    streamWriter.Flush();
-                    Console.WriteLine("Message Sent to chat room: " + incoming);
+                    switch(incoming)
+                    {
+                        case "/NameUpdate":
+                            streamWriter.WriteLine("Name?");
+                            username = streamReader.ReadLine();
+                            break;
+                        case "/Disconnect":
+                            purge();
+                            chatServer.remove(this);
+                            break;
+                        case "/MyName":
+                            streamWriter.WriteLine(username);
+                            streamWriter.Flush();
+                            break;
+                        default:
+                            Console.WriteLine("Message received: " + incoming);
+                            //streamWriter.WriteLine(incoming);
+                            chatServer.SendMessage(incoming,this);
+                            streamWriter.Flush();
+                            Console.WriteLine("Message Sent to chat room: " + incoming);
+                            break;
+                    }
                     incoming = streamReader.ReadLine();
                 }
             }
@@ -47,7 +62,6 @@ namespace NetworksLab1Server
             {
                 Console.WriteLine(e + " " + e.StackTrace);
             }
-            Console.WriteLine("Client sent '/quit': closing connection.");
             chatServer.remove(this);
             purge();
         }
@@ -60,6 +74,7 @@ namespace NetworksLab1Server
         {
             try
             {
+                serverThread.Abort();
                 streamReader.Close();
                 streamWriter.Close();
                 client.Close();
@@ -68,6 +83,11 @@ namespace NetworksLab1Server
             {
                 Console.WriteLine(e.StackTrace);
             }
+            Console.WriteLine("Disconnected User: " + username);
+        }
+        public void setName(String name)
+        {
+            username = name;
         }
         public String getName()
         {
