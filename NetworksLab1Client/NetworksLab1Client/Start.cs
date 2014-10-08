@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace NetworksLab1Client
 {
@@ -10,8 +12,8 @@ namespace NetworksLab1Client
     {
         public static void Main(String[] args)
         {
-            ChatClient client = new ChatClient("SCUTULATUS");
-            client.start();
+            ClientInterface UI = new ClientInterface();
+            System.Windows.Forms.Application.Run(UI);
         }
     }
 }

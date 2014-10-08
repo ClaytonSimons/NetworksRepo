@@ -1,6 +1,6 @@
 ﻿namespace NetworksLab1Client
 {
-    partial class MessengerForm
+    partial class ClientInterface
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,7 @@
             this.UsernameRTxt = new System.Windows.Forms.RichTextBox();
             this.UsernameTxt = new System.Windows.Forms.TextBox();
             this.UpdateBtn = new System.Windows.Forms.Button();
+            this.ConnectBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SendBtn
@@ -76,6 +77,7 @@
             this.UsernameRTxt.Size = new System.Drawing.Size(87, 23);
             this.UsernameRTxt.TabIndex = 5;
             this.UsernameRTxt.Text = "";
+            this.UsernameRTxt.TextChanged += new System.EventHandler(this.UsernameRTxtChange);
             // 
             // UsernameTxt
             // 
@@ -95,21 +97,33 @@
             this.UpdateBtn.TabIndex = 7;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = true;
-            this.UpdateBtn.Click += new System.EventHandler(this.UpdateUsername);
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateUsernameClick);
             // 
-            // MessengerForm
+            // ConnectBtn
+            // 
+            this.ConnectBtn.Location = new System.Drawing.Point(383, 90);
+            this.ConnectBtn.Name = "ConnectBtn";
+            this.ConnectBtn.Size = new System.Drawing.Size(86, 23);
+            this.ConnectBtn.TabIndex = 8;
+            this.ConnectBtn.Text = "Connect";
+            this.ConnectBtn.UseVisualStyleBackColor = true;
+            this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtnClick);
+            // 
+            // ClientInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 282);
+            this.Controls.Add(this.ConnectBtn);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.UsernameTxt);
             this.Controls.Add(this.UsernameRTxt);
             this.Controls.Add(this.ChatBoxRTxt);
             this.Controls.Add(this.SendRTxt);
             this.Controls.Add(this.SendBtn);
-            this.Name = "MessengerForm";
+            this.Name = "ClientInterface";
             this.Text = "NAT Messenger";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormIsClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +138,6 @@
         private System.Windows.Forms.RichTextBox UsernameRTxt;
         private System.Windows.Forms.TextBox UsernameTxt;
         private System.Windows.Forms.Button UpdateBtn;
+        private System.Windows.Forms.Button ConnectBtn;
     }
 }

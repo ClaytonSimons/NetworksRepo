@@ -10,3 +10,16 @@ C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksL
 C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.csproj.GenerateResource.Cache
 C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.exe.manifest
 C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.application
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.exe.config
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.exe
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.pdb
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.exe.manifest
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.application
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.exe
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Debug\NetworksLab1Client.pdb
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.csprojResolveAssemblyReference.cache
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.Properties.Resources.resources
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.csproj.GenerateResource.Cache
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.exe.manifest
+Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.application
+z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\obj\Debug\NetworksLab1Client.ClientInterface.resources
