@@ -59,6 +59,8 @@ namespace NetworksLab1Server
                     }
                     incoming = streamReader.ReadLine();
                 }
+                streamWriter.WriteLine("/Disconnected");
+                streamWriter.Flush();
             }
             catch (Exception e)
             {

@@ -22,7 +22,7 @@ namespace NetworksLab1Client
         String serverHost;
         public ClientInterface()
         {
-            serverHost = "SCUTULATUS";
+            serverHost = "FROGGER";
             InitializeComponent();
             client = new ChatClient(serverHost, this);
             if (client.start())

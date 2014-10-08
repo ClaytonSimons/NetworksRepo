@@ -82,9 +82,11 @@ namespace NetworksLab1Client
                     streamWriter.Flush();
                 }
                 if (readingThread != null)
-                    readingThread.Abort();
-                streamWriter.Close();
-                streamReader.Close();
+                    readingThread.Join();
+                if(streamWriter != null)
+                    streamWriter.Close();
+                if(streamReader != null)
+                    streamReader.Close();
                 Close();
             }
             catch (Exception e)
@@ -92,6 +94,7 @@ namespace NetworksLab1Client
                 Debug.WriteLine(e.StackTrace);
                 if(readingThread != null)
                     readingThread.Abort();
+                
                 streamWriter = null;
                 streamReader = null;
             }
@@ -117,6 +120,12 @@ namespace NetworksLab1Client
                             break;
                         case"/MyName"://telling us what our name is
                             incomeMessage = streamReader.ReadLine();
+                            break;
+                        case "/Disconnected"://you have been disconnected
+                            streamWriter.Close();
+                            streamWriter = null;
+                            disconnect();
+                            clientInterface.updateChatBox("disconnected");
                             break;
                         default://got a message from other users
                             clientInterface.updateChatBox(msg);
