@@ -126,5 +126,25 @@ namespace NetworksLab1Server
             }
             return answer;
         }
+        public String assignName(String name)
+        {
+            String answer = name;
+            Random rand = new Random();
+            bool continu = true;
+            while (continu)
+            {
+                continu = false;
+                foreach (User user in users)
+                {
+                    if (answer == user.getName())
+                    {
+                        continu = true;
+                        answer = name + rand.Next(1000).ToString();
+                        break;
+                    }
+                }
+            }
+            return answer;
+        }
     }
 }

@@ -36,21 +36,19 @@ namespace NetworksLab1Server
                 {
                     switch(incoming)
                     {
-                        case "/NameUpdate":
-                            streamWriter.WriteLine("/Name?");
-                            streamWriter.Flush();
-                            username = streamReader.ReadLine();
+                        case "/NameUpdate"://Client asking to update it's name.
+                            username = chatServer.assignName(streamReader.ReadLine());
                             break;
-                        case "/Disconnect":
+                        case "/Disconnect"://Client asking to disconnect it from server.
                             quit = true;
                             break;
-                        case "/MyName":
+                        case "/MyName"://Client asking what it's name is.
                             streamWriter.WriteLine("/MyName");
                             streamWriter.Flush();
                             streamWriter.WriteLine(username);
                             streamWriter.Flush();
                             break;
-                        default:
+                        default://Got a message from this client.
                             Console.WriteLine("Message received: " + incoming);
                             //streamWriter.WriteLine(incoming);
                             chatServer.SendMessage(incoming,this);

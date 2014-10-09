@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NetworksLab1Client.exe" size="12288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NetworksLab1Client.exe" size="12800">
       <assemblyIdentity name="NetworksLab1Client" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xS/31s1eP8D7Rs4I21ut1JumVnKVE6j9cwkNNIb4Aqc=</dsig:DigestValue>
+        <dsig:DigestValue>SH0YtP++cj206WmLGOW5EtXq1QJfA+1d3nzOGR17X/Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -22,17 +22,30 @@ namespace NetworksLab1Client
         String serverHost;
         public ClientInterface()
         {
-            serverHost = "FROGGER";
+            serverHost = "SCUTULATUS";
             InitializeComponent();
             client = new ChatClient(serverHost, this);
             if (client.start())
+            {
                 updateChatBox("connected!");
+                enableUI();
+            }
             else
                 updateChatBox("couldn't connect");
         }
+        public void enableUI()
+        {
+            SendBtn.Enabled = true;
+            UpdateBtn.Enabled = true;
+        }
+        public void disableUI()
+        {
+            SendBtn.Enabled = false;
+            UpdateBtn.Enabled = false;
+        }
         public void updateChatBox(String msg)
         {
-            if (ChatBoxRTxt.Text.Length == 0)
+            if (ChatBoxRTxt.ToString().Length == 0)
                 ChatBoxRTxt.AppendText(msg);
             else
                 ChatBoxRTxt.AppendText("\n" + msg);
@@ -73,7 +86,8 @@ namespace NetworksLab1Client
 
         private void ConnectBtnClick(object sender, EventArgs e)
         {
-            String tempname = client.getUsernameFromServer();
+            String tempname = client.getUsername();
+            disableUI();
             client.disconnect();
             client = new ChatClient(serverHost, this);
             client.setUsername(tempname);
@@ -81,6 +95,7 @@ namespace NetworksLab1Client
             {
                 updateChatBox("connected!");
                 client.updateUsername();
+                enableUI();
             }
             else
                 updateChatBox("couldn't connect");

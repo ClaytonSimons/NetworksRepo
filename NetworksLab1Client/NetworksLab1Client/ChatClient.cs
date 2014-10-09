@@ -18,9 +18,11 @@ namespace NetworksLab1Client
         String hostName;
         Thread readingThread;
         String incomeMessage;
+        bool shouldEnd;
         ClientInterface clientInterface;
         public ChatClient(String host, ClientInterface inter)
         {
+            shouldEnd = false;
             clientInterface = inter;
             streamWriter = null;
             streamReader = null;
@@ -74,30 +76,30 @@ namespace NetworksLab1Client
         }
         public void disconnect()
         {
-            try
-            {
-                if (streamWriter != null)
+            if(this.Active)
+                try
                 {
-                    streamWriter.WriteLine("/Disconnect");
-                    streamWriter.Flush();
+                    if (streamWriter != null)
+                    {
+                        streamWriter.WriteLine("/Disconnect");
+                        streamWriter.Flush();
+                    }
+                    shouldEnd = true;
+                    if(streamWriter != null)
+                        streamWriter.Close();
+                    if(streamReader != null)
+                        streamReader.Close();
+                    Close();
                 }
-                if (readingThread != null)
-                    readingThread.Join();
-                if(streamWriter != null)
-                    streamWriter.Close();
-                if(streamReader != null)
-                    streamReader.Close();
-                Close();
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e.StackTrace);
-                if(readingThread != null)
-                    readingThread.Abort();
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.StackTrace);
+                    if(readingThread != null)
+                        readingThread.Abort();
                 
-                streamWriter = null;
-                streamReader = null;
-            }
+                    streamWriter = null;
+                    streamReader = null;
+                }
         }
         public void send(String msg)
         {
@@ -107,24 +109,26 @@ namespace NetworksLab1Client
         public void read()
         {
             String msg;
-            while (true)
+            while (!shouldEnd)
             {
                 try
                 {
                     msg = streamReader.ReadLine();
                     switch (msg)
                     {
-                        case "/Name?"://asking what our name is
+                        case "/Name?"://server is asking what our name is
                             streamWriter.WriteLine(username);
                             streamWriter.Flush();
                             break;
-                        case"/MyName"://telling us what our name is
+                        case "/MyName"://server is telling us what our name is
                             incomeMessage = streamReader.ReadLine();
                             break;
                         case "/Disconnected"://you have been disconnected
                             streamWriter.Close();
                             streamWriter = null;
+                            shouldEnd = true;
                             disconnect();
+                            clientInterface.disableUI();
                             clientInterface.updateChatBox("disconnected");
                             break;
                         default://got a message from other users
@@ -142,14 +146,21 @@ namespace NetworksLab1Client
         {
             try
             {
-
                 streamWriter.WriteLine("/NameUpdate");
                 streamWriter.Flush();
+                streamWriter.WriteLine(username);
+                streamWriter.Flush();
+                username = getUsernameFromServer();
+                clientInterface.updateUsernameRTxt(username);
             }
             catch(Exception e)
             {
                 Debug.WriteLine(e.StackTrace);
             }
+        }
+        public String getUsername()
+        {
+            return username;
         }
         public void setUsername(String name)
         {

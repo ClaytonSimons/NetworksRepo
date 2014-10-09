@@ -41,6 +41,7 @@
             // 
             // SendBtn
             // 
+            this.SendBtn.Enabled = false;
             this.SendBtn.Location = new System.Drawing.Point(386, 248);
             this.SendBtn.Name = "SendBtn";
             this.SendBtn.Size = new System.Drawing.Size(84, 23);
@@ -66,6 +67,7 @@
             // 
             this.ChatBoxRTxt.Location = new System.Drawing.Point(12, 12);
             this.ChatBoxRTxt.Name = "ChatBoxRTxt";
+            this.ChatBoxRTxt.ReadOnly = true;
             this.ChatBoxRTxt.Size = new System.Drawing.Size(365, 230);
             this.ChatBoxRTxt.TabIndex = 4;
             this.ChatBoxRTxt.Text = "";
@@ -91,6 +93,7 @@
             // 
             // UpdateBtn
             // 
+            this.UpdateBtn.Enabled = false;
             this.UpdateBtn.Location = new System.Drawing.Point(383, 61);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(86, 23);
@@ -113,6 +116,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(482, 282);
             this.Controls.Add(this.ConnectBtn);
             this.Controls.Add(this.UpdateBtn);
