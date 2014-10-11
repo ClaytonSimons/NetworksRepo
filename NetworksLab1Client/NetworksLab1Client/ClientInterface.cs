@@ -49,6 +49,7 @@ namespace NetworksLab1Client
                 ChatBoxRTxt.AppendText(msg);
             else
                 ChatBoxRTxt.AppendText("\n" + msg);
+            ChatBoxRTxt.ScrollToCaret();
         }
 
         public void updateUsernameRTxt(String msg)
@@ -56,6 +57,7 @@ namespace NetworksLab1Client
             UsernameRTxt.ResetText();
             UsernameRTxt.AppendText(msg);
         }
+
         public String getUsernameRTxt()
         {
             return UsernameRTxt.Text.ToString();
@@ -90,7 +92,6 @@ namespace NetworksLab1Client
             disableUI();
             client.disconnect();
             client = new ChatClient(serverHost, this);
-            client.setUsername(tempname);
             if (client.start())
             {
                 updateChatBox("connected!");

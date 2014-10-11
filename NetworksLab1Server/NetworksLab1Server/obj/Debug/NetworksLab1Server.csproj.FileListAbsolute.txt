@@ -1,18 +1,1 @@
-c:\users\clay\documents\visual studio 2012\Projects\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.exe.config
-C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.csprojResolveAssemblyReference.cache
-C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.exe
-C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.pdb
-C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.exe
-C:\Users\Clay\Documents\Visual Studio 2012\Projects\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.pdb
-Z:\documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.exe.config
-Z:\documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.exe
-Z:\documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.pdb
-Z:\documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.exe
-Z:\documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.pdb
-Z:\documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.csprojResolveAssemblyReference.cache
 C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.exe.config
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.exe
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.pdb
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.exe
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\bin\Debug\NetworksLab1Server.pdb
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Server\NetworksLab1Server\obj\Debug\NetworksLab1Server.csprojResolveAssemblyReference.cache

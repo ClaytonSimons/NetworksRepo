@@ -56,6 +56,7 @@ namespace NetworksLab1Server
                 server.Stop();
             }
         }
+
         private void cleanUp()
         {
             while (true)
@@ -67,8 +68,7 @@ namespace NetworksLab1Server
                     Monitor.Enter(toRemove);
                     foreach (User user in toRemove)
                     {
-                        users.Remove(user);
-
+                        remove(user);
                     }
                     toRemove.Clear();
                     Monitor.Exit(toRemove);
@@ -78,12 +78,19 @@ namespace NetworksLab1Server
                 Thread.Yield();
             }
         }
+        public void SendMessageToAll(String msg)
+        {
+            foreach (User user in users)
+            {
+                user.write(msg);
+            }
+        }
         public void SendMessage(String msg, User from)
         {
             foreach (User user in users)
             {
                 if(user != from)
-                    user.write(msg,from);
+                    user.write(msg);
             }
         }
         public void add(TcpClient client)
@@ -93,6 +100,7 @@ namespace NetworksLab1Server
             user.setName(assignName());
             users.Add(user);
             Console.WriteLine("User: " + user.getName() + " added");
+            SendMessage(user.getName() + " Has joined",user);
             Monitor.Exit(users);
         }
         public void markForDeath(User user)
@@ -102,6 +110,7 @@ namespace NetworksLab1Server
         private void remove(User user)
         {
             Monitor.Enter(users);
+            SendMessage(user.getName() + " Has disconnected", user);
             users.Remove(user);
             Monitor.Exit(users);
         }

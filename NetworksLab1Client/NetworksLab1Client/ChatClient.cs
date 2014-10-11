@@ -74,6 +74,7 @@ namespace NetworksLab1Client
 
             return true;
         }
+
         public void disconnect()
         {
             if(this.Active)

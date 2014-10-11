@@ -26,6 +26,7 @@ namespace NetworksLab1Server
             serverThread = new Thread(new ThreadStart(loop));
             serverThread.Start();
         }
+
         public void loop()
         {
             try
@@ -37,7 +38,9 @@ namespace NetworksLab1Server
                     switch(incoming)
                     {
                         case "/NameUpdate"://Client asking to update it's name.
+                            String old = username;
                             username = chatServer.assignName(streamReader.ReadLine());
+                            chatServer.SendMessage(old + " Has changed names to " + username,this);
                             break;
                         case "/Disconnect"://Client asking to disconnect it from server.
                             quit = true;
@@ -51,6 +54,7 @@ namespace NetworksLab1Server
                         default://Got a message from this client.
                             Console.WriteLine("Message received: " + incoming);
                             //streamWriter.WriteLine(incoming);
+                            incoming = username + ": " + incoming;
                             chatServer.SendMessage(incoming,this);
                             Console.WriteLine("Message Sent to chat room: " + incoming);
                             break;
@@ -67,9 +71,9 @@ namespace NetworksLab1Server
             chatServer.markForDeath(this);
             purge();
         }
-        public void write(String message,User user)
+        public void write(String message)
         {
-            streamWriter.WriteLine(user.getName() + ": " + message);
+            streamWriter.WriteLine( message);
             streamWriter.Flush();
         }
         public void purge()
