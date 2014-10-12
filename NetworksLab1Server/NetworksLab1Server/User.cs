@@ -9,6 +9,11 @@ using System.Threading;
 
 namespace NetworksLab1Server
 {
+    /*
+     Class Name: User
+     Description:
+        A client that uses the server.
+     */
     class User
     {
         private String username;
@@ -17,6 +22,14 @@ namespace NetworksLab1Server
         private StreamWriter streamWriter;
         private ChatServer chatServer;
         private Thread serverThread;
+        /*
+         Method Name: User
+         Arguments:
+            c is the TcpClient.
+            cs is the ChatServer to communicate with.
+         Desctiption:
+            Constructor for User.  It initializes data members and spins up a thread to listen for messages.
+         */
         public User(TcpClient c,ChatServer cs)
         {
             chatServer = cs;
@@ -26,7 +39,11 @@ namespace NetworksLab1Server
             serverThread = new Thread(new ThreadStart(loop));
             serverThread.Start();
         }
-
+        /*
+         Method Name: loop
+         Description:
+            Listens for Tcp messages and processes them.
+         */
         public void loop()
         {
             try
@@ -71,11 +88,23 @@ namespace NetworksLab1Server
             chatServer.markForDeath(this);
             purge();
         }
+        /*
+         Method Name: write
+         Arguments:
+            message is the message to send to the client.
+         Description:
+            Sends a message to the client.
+         */
         public void write(String message)
         {
             streamWriter.WriteLine( message);
             streamWriter.Flush();
         }
+        /*
+         Method Name: purge
+         Description:
+            Ends the connection to the client.
+         */
         public void purge()
         {
             try
@@ -91,14 +120,31 @@ namespace NetworksLab1Server
             }
             Console.WriteLine("Disconnected User: " + username);
         }
+        /*
+         Method Name: setName
+         Arguments:
+            name is the string to set username to.
+         Description:
+            Sets username to name.
+         */
         public void setName(String name)
         {
             username = name;
         }
+        /*
+         Method Name: getName
+         Description:
+            Returns username.
+         */
         public String getName()
         {
             return username;
         }
+        /*
+         Method Name: getServerThread
+         Description:
+            Returns serverThread.
+         */
         public Thread getServerThread()
         {
             return serverThread;

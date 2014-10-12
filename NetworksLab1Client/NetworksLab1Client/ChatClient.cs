@@ -10,6 +10,12 @@ using System.Diagnostics;
 
 namespace NetworksLab1Client
 {
+    /*
+     Class Name: ChatClient
+     Description: 
+        This is the TcpClient that connects with the server.  It is the backend to the 
+     user interface of this program.
+     */
     public class ChatClient:TcpClient
     {
         StreamWriter streamWriter;
@@ -20,6 +26,14 @@ namespace NetworksLab1Client
         String incomeMessage;
         bool shouldEnd;
         ClientInterface clientInterface;
+        /*
+         Method Name: ChatClient
+         Arguments: 
+            host is the name or ip address of the computer that the server's on.
+            inter is the user interface that is associated with this client.
+         Description:
+            Constructor for ChatClient.  Initializes data members.
+         */
         public ChatClient(String host, ClientInterface inter)
         {
             shouldEnd = false;
@@ -29,6 +43,12 @@ namespace NetworksLab1Client
             //If localhost, use it.  Otherwise, whatever is in host
             hostName = host == "localhost" ? "127.0.0.1" : host;
         }
+        /*
+         Method Name: start
+         Description: 
+            This is a start point for the connection and setup of communication with
+         the server.
+         */
         public bool start()
         {
             try
@@ -74,7 +94,11 @@ namespace NetworksLab1Client
 
             return true;
         }
-
+        /*
+         Method Name: disconnect
+         Description:
+            This method disconnects from the server.
+         */
         public void disconnect()
         {
             if(this.Active)
@@ -102,11 +126,24 @@ namespace NetworksLab1Client
                     streamReader = null;
                 }
         }
+        /*
+         Method Name: send
+         Arguments: 
+            msg is the message to be sent.
+         Description:
+            This method sends a message to the server.
+         */
         public void send(String msg)
         {
             streamWriter.WriteLine(msg);
             streamWriter.Flush();
         }
+        /*
+         Method Name: read
+         Description:
+            This method listens for Tcp messages from the server and
+         processes them.
+         */
         public void read()
         {
             String msg;
@@ -143,6 +180,11 @@ namespace NetworksLab1Client
                 }
             }
         }
+        /*
+         Method Name: updateUsername
+         Description:
+            Updates the username on the server for this client.
+         */
         public void updateUsername()
         {
             try
@@ -159,14 +201,32 @@ namespace NetworksLab1Client
                 Debug.WriteLine(e.StackTrace);
             }
         }
+        /*
+         Method Name: getUsername
+         Description:
+            returns the username data member.
+         */
         public String getUsername()
         {
             return username;
         }
+        /*
+         Method Name: setUsername
+         Arguemnts:
+            name is the string to set the username to.
+         Description:
+            Sets the username to name.
+         */
         public void setUsername(String name)
         {
             username = name;
         }
+        /*
+         Method Name: getUsernameFromServer
+         Description:
+            Retrieves the username the server has stored for this client
+         and returns it.
+         */
         public String getUsernameFromServer()
         {
             try

@@ -10,6 +10,11 @@ using System.Net;
 
 namespace NetworksLab1Server
 {
+    /*
+     Class Name: ChatServer
+     Description:
+        This is the server class that controls communication between clients, and connection to the server.
+     */
     class ChatServer
     {
         private List<User> users;
@@ -18,6 +23,11 @@ namespace NetworksLab1Server
         private Thread cleanUpThread;
         private int portNumber;
         private int userNumber;
+        /*
+         Method Name: ChatServer
+         Description:
+            Constructor for the ChatServer.  Initializes data members.
+         */
         public ChatServer()
         {
             userNumber = 0;
@@ -27,6 +37,11 @@ namespace NetworksLab1Server
             //The port number standard to this application
             server = new TcpListener(portNumber);
         }
+        /*
+         Method Name: start
+         Description:
+            The loop that listens for Tcp connections from clients, and accepts them.
+         */
         public void start()
         {
             try
@@ -56,7 +71,12 @@ namespace NetworksLab1Server
                 server.Stop();
             }
         }
-
+        /*
+         Method Name: cleanUp
+         Description:
+            Removes disconnected clients from the list and sends a message to other clients that they
+         have been disconnected.
+         */
         private void cleanUp()
         {
             while (true)
@@ -78,6 +98,13 @@ namespace NetworksLab1Server
                 Thread.Yield();
             }
         }
+        /*
+         Method Name: SendMessageToAll
+         Arguments:
+            msg is the message to send.
+         Description:
+            Sends a Tcp message to all clients.
+         */
         public void SendMessageToAll(String msg)
         {
             foreach (User user in users)
@@ -85,6 +112,14 @@ namespace NetworksLab1Server
                 user.write(msg);
             }
         }
+        /*
+         Method Name: SendMessage
+         Arguments:
+            msg is the message to send.
+            from is the user the message was from.
+         Description:
+            This method sends a Tcp message to all clients other than from.
+         */
         public void SendMessage(String msg, User from)
         {
             foreach (User user in users)
@@ -93,6 +128,13 @@ namespace NetworksLab1Server
                     user.write(msg);
             }
         }
+        /*
+         Method Name: add
+         Arguments:
+            client is the client to add to users.
+         Description:
+            Adds client to the list of TcpClients called users.
+         */
         public void add(TcpClient client)
         {
             Monitor.Enter(users);
@@ -103,10 +145,24 @@ namespace NetworksLab1Server
             SendMessage(user.getName() + " Has joined",user);
             Monitor.Exit(users);
         }
+        /*
+         Method Name: markForDeath
+         Arguments:
+            user is the user to be removed from users.
+         Description:
+            Adds a user to be removed from users.
+         */
         public void markForDeath(User user)
         {
             toRemove.Add(user);
         }
+        /*
+         Method Name: remove
+         Arguments:
+            user is the user to be removed from users.
+         Description:
+            Removes user from users.
+         */
         private void remove(User user)
         {
             Monitor.Enter(users);
@@ -114,10 +170,20 @@ namespace NetworksLab1Server
             users.Remove(user);
             Monitor.Exit(users);
         }
+        /*
+         Method Name: ~ChatServer
+         Description:
+            Clears all elements in users.
+         */
         ~ChatServer()
         {
             users.Clear();
         }
+        /*
+         Method Name: assignName
+         Description:
+            Creates and assigns a name to a client.
+         */
         public String assignName()
         {
             String answer;
@@ -135,6 +201,14 @@ namespace NetworksLab1Server
             }
             return answer;
         }
+        /*
+         Method Name: assignName
+         Arguments: 
+            name is the requested name from the client
+         Description:
+            Assigns the requested name to the user, or a name that has a number appended to the end to keep
+         from redundant names on the server.
+         */
         public String assignName(String name)
         {
             String answer = name;
