@@ -1,0 +1,9 @@
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\bin\Debug\NetworksLab2FTPClient.exe.config
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\bin\Debug\NetworksLab2FTPClient.exe
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\bin\Debug\NetworksLab2FTPClient.pdb
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\obj\Debug\NetworksLab2FTPClient.csprojResolveAssemblyReference.cache
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\obj\Debug\NetworksLab2FTPClient.Form1.resources
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\obj\Debug\NetworksLab2FTPClient.Properties.Resources.resources
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\obj\Debug\NetworksLab2FTPClient.csproj.GenerateResource.Cache
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\obj\Debug\NetworksLab2FTPClient.exe
+Z:\documents\GitHub\NetworksRepo\NetworksLab2FTPClient\NetworksLab2FTPClient\obj\Debug\NetworksLab2FTPClient.pdb
