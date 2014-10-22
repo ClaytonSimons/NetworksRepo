@@ -1,2 +1,0 @@
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Release\NetworksLab1Client.exe.config
-Z:\documents\GitHub\NetworksRepo\NetworksLab1Client\NetworksLab1Client\bin\Release\NetworksLab1Client.exe.config

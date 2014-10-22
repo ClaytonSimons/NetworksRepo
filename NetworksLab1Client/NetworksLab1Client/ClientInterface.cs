@@ -32,16 +32,7 @@ namespace NetworksLab1Client
          */
         public ClientInterface()
         {
-            serverHost = "SCUTULATUS";
             InitializeComponent();
-            client = new ChatClient(serverHost, this);
-            if (client.start())
-            {
-                updateChatBox("connected!");
-                enableUI();
-            }
-            else
-                updateChatBox("couldn't connect");
         }
         /*
          Method Name: enableUI
@@ -161,7 +152,7 @@ namespace NetworksLab1Client
             Environment.Exit(0);
         }
         /*
-         Method Name: ConnectBrnClick
+         Method Name: ConnectBtnClick
          Arguments:
             sender is the object that the event happened to.
             e is any arguments passed.
@@ -172,9 +163,9 @@ namespace NetworksLab1Client
 
         private void ConnectBtnClick(object sender, EventArgs e)
         {
-            String tempname = client.getUsername();
+            if(client != null)
+                client.disconnect();
             disableUI();
-            client.disconnect();
             client = new ChatClient(serverHost, this);
             if (client.start())
             {
@@ -184,6 +175,19 @@ namespace NetworksLab1Client
             }
             else
                 updateChatBox("couldn't connect");
+        }
+        /*
+         * Method Name: serverNameRTxtChange
+         * Arguments:
+         *      sender is the object that the event happened to.
+         *      e is any arguments passed.
+         * Description:
+         *      When the text in the serverNameRTxt object is changed, we update
+         *   the serverhost datamember.
+         */
+        private void serverNameRTxtChange(object sender, EventArgs e)
+        {
+            serverHost = serverNameRTxt.Text;
         }
     }
 }

@@ -37,6 +37,8 @@
             this.UsernameTxt = new System.Windows.Forms.TextBox();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.ConnectBtn = new System.Windows.Forms.Button();
+            this.serverNameRTxt = new System.Windows.Forms.RichTextBox();
+            this.serverNameTxt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SendBtn
@@ -94,7 +96,7 @@
             // UpdateBtn
             // 
             this.UpdateBtn.Enabled = false;
-            this.UpdateBtn.Location = new System.Drawing.Point(383, 61);
+            this.UpdateBtn.Location = new System.Drawing.Point(383, 108);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(86, 23);
             this.UpdateBtn.TabIndex = 7;
@@ -104,13 +106,32 @@
             // 
             // ConnectBtn
             // 
-            this.ConnectBtn.Location = new System.Drawing.Point(383, 90);
+            this.ConnectBtn.Location = new System.Drawing.Point(383, 137);
             this.ConnectBtn.Name = "ConnectBtn";
             this.ConnectBtn.Size = new System.Drawing.Size(86, 23);
             this.ConnectBtn.TabIndex = 8;
             this.ConnectBtn.Text = "Connect";
             this.ConnectBtn.UseVisualStyleBackColor = true;
             this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtnClick);
+            // 
+            // serverNameRTxt
+            // 
+            this.serverNameRTxt.Location = new System.Drawing.Point(384, 80);
+            this.serverNameRTxt.Name = "serverNameRTxt";
+            this.serverNameRTxt.Size = new System.Drawing.Size(85, 22);
+            this.serverNameRTxt.TabIndex = 9;
+            this.serverNameRTxt.Text = "";
+            this.serverNameRTxt.TextChanged += new System.EventHandler(this.serverNameRTxtChange);
+            // 
+            // serverNameTxt
+            // 
+            this.serverNameTxt.BackColor = System.Drawing.SystemColors.Control;
+            this.serverNameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.serverNameTxt.Location = new System.Drawing.Point(385, 57);
+            this.serverNameTxt.Name = "serverNameTxt";
+            this.serverNameTxt.Size = new System.Drawing.Size(83, 13);
+            this.serverNameTxt.TabIndex = 10;
+            this.serverNameTxt.Text = "Server Name";
             // 
             // ClientInterface
             // 
@@ -119,6 +140,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(482, 282);
+            this.Controls.Add(this.serverNameTxt);
+            this.Controls.Add(this.serverNameRTxt);
             this.Controls.Add(this.ConnectBtn);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.UsernameTxt);
@@ -144,5 +167,7 @@
         private System.Windows.Forms.TextBox UsernameTxt;
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button ConnectBtn;
+        private System.Windows.Forms.RichTextBox serverNameRTxt;
+        private System.Windows.Forms.TextBox serverNameTxt;
     }
 }
