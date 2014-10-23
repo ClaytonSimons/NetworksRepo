@@ -43,6 +43,7 @@
             this.usernameRTxt.Size = new System.Drawing.Size(141, 25);
             this.usernameRTxt.TabIndex = 0;
             this.usernameRTxt.Text = "Username";
+            this.usernameRTxt.TextChanged += new System.EventHandler(this.usernameRTxtChange);
             // 
             // contentLstBx
             // 
@@ -60,6 +61,7 @@
             this.passwordRTxt.Size = new System.Drawing.Size(141, 25);
             this.passwordRTxt.TabIndex = 2;
             this.passwordRTxt.Text = "Password";
+            this.passwordRTxt.TextChanged += new System.EventHandler(this.passwordRTxtChange);
             // 
             // serverAddressRTxt
             // 
@@ -69,6 +71,7 @@
             this.serverAddressRTxt.Size = new System.Drawing.Size(151, 25);
             this.serverAddressRTxt.TabIndex = 3;
             this.serverAddressRTxt.Text = "ServerAddress";
+            this.serverAddressRTxt.TextChanged += new System.EventHandler(this.serverAddressRTxtChange);
             // 
             // connectBtn
             // 
