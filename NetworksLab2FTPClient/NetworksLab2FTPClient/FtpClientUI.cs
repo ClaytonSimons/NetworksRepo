@@ -32,7 +32,10 @@ namespace NetworksLab2FTPClient
             responseStream = null;
         }
         /*
-         * Connects to ftp server.
+         * Method Name:connectBtn_Click
+         * Description:
+         *      This is a click event on the connect button.  It lists the content of the ftp server and directory specified 
+         *      in the options.
          */
         private void connectBtn_Click(object sender, EventArgs e)
         {
@@ -62,7 +65,9 @@ namespace NetworksLab2FTPClient
             }
         }
         /*
-         * Create
+         * Method Name:createBtn_Click
+         * Description:
+         *      This is a click action on the create button.  It creates a text file with the name of the text in the utility text field.
          */
         private void createBtn_Click(object sender, EventArgs e)
         {
@@ -108,6 +113,12 @@ namespace NetworksLab2FTPClient
                 contentLstBx.Items.Add(ftpResponse.StatusCode);
             }
         }
+        /*
+         * Method Name: deleteBtnClick
+         * Description:
+         *      This is a click event for the delete button. It deletes a text file in the directory specified, with the name that matches the 
+         *      text in the utility text field.
+         */
         private void deleteBtnClick(object sender, EventArgs e)
         {
             String fileName = utilityRTxt.Text;
@@ -120,13 +131,19 @@ namespace NetworksLab2FTPClient
 
             responseStream = ftpResponse.GetResponseStream();
             ftpReader = new StreamReader(responseStream);
-
+            contentLstBx.Items.Clear();
             contentLstBx.Items.Add(ftpResponse.StatusDescription);
 
             ftpReader.Close();
             ftpResponse.Close();
 
         }
+        /*
+         * Method Name: retrieveBtnClick
+         * Description:
+         *      This is a click even for the retrieve button.  Reads a file on the ftp server, in the directory specified, with the name specified, and displays the contents 
+         *      to the user.
+         */
         private void retrieveBtnClick(object sender, EventArgs e)
         {
             String fileName = utilityRTxt.Text;
@@ -140,6 +157,7 @@ namespace NetworksLab2FTPClient
             responseStream = ftpResponse.GetResponseStream();
             ftpReader = new StreamReader(responseStream);
             String content = ftpReader.ReadToEnd();
+            contentLstBx.Items.Clear();
             contentLstBx.Items.Add(content);
 
             contentLstBx.Items.Add(ftpResponse.StatusDescription);
@@ -148,6 +166,13 @@ namespace NetworksLab2FTPClient
             ftpResponse.Close();
 
         }
+        /*
+         * Method Name: updateBtnClick
+         * Description:
+         *      This is a click event for the update button.  It allows the user to edit a text file by downloading the specified file and 
+         *      puting it's content on a seperate form where the user can type what he/she wants.  When the user hits send, this method uploads 
+         *      the new file to the ftp server.
+         */
         private void updateBtnClick(object sender, EventArgs e)
         {
             String fileName = utilityRTxt.Text;
@@ -169,6 +194,9 @@ namespace NetworksLab2FTPClient
 
         }
         /*
+         * Method Name: uploadFile
+         * Description:
+         *      Uploads the created file to the ftp server.
          */
         private void uploadFile()
         {
@@ -191,20 +219,22 @@ namespace NetworksLab2FTPClient
             contentLstBx.Items.Add(ftpResponse.StatusCode);
             
         }
+        //retrieves created file.
         public void setFile(String txt)
         {
             createdFile = txt;
         }
+        //updates userName when changed in the text field.
         private void usernameRTxtChange(object sender, EventArgs e)
         {
             userName = usernameRTxt.Text;
         }
-
+        //updates the password when changed in the text field.
         private void passwordRTxtChange(object sender, EventArgs e)
         {
             passWord = passwordRTxt.Text;
         }
-
+        //changes the server address when changed in the text field.
         private void serverAddressRTxtChange(object sender, EventArgs e)
         {
             serverAddress = serverAddressRTxt.Text;
