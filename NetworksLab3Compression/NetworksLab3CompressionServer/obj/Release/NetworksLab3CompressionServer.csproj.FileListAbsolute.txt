@@ -1,0 +1,8 @@
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3CompressionServer\bin\Release\NetworksLab3CompressionServer.exe.config
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3CompressionServer\bin\Release\NetworksLab3CompressionServer.exe
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3CompressionServer\bin\Release\NetworksLab3CompressionServer.pdb
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3CompressionServer\bin\Release\Compression.dll
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3CompressionServer\bin\Release\Compression.pdb
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3CompressionServer\obj\Release\NetworksLab3CompressionServer.csprojResolveAssemblyReference.cache
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3CompressionServer\obj\Release\NetworksLab3CompressionServer.exe
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3CompressionServer\obj\Release\NetworksLab3CompressionServer.pdb
