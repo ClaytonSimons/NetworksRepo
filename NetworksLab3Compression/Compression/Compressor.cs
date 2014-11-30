@@ -25,25 +25,18 @@ namespace Compression
                 answer = true;
             return answer;
         }
-        public BitArray Compress(byte[] data)
+        public BitArray Compress(byte[] data, String name)
         {
             BitArray answer = null;
             if(comp != null)
-                answer = comp.Compress(data);
+                answer = comp.Compress(data, name);
             return answer;
         }
-        public byte[] Decompress(BitArray data)
+        public byte[] Decompress(BitArray data, String name)
         {
             byte[] answer = null;
             if(comp != null)
-                answer = comp.Decompress(data);
-            return answer;
-        }
-        public List<int> Compress(List<byte> source)
-        {
-            List<int> answer = null;
-            if (comp != null)
-                answer = comp.Compress(source);
+                answer = comp.Decompress(data, name);
             return answer;
         }
     }
