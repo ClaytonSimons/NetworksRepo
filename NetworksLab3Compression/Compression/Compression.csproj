@@ -45,7 +45,6 @@
     <Compile Include="HuffmanCompressor.cs" />
     <Compile Include="HuffmanTree.cs" />
     <Compile Include="HuffNode.cs" />
-    <Compile Include="LZCompressor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
