@@ -15,22 +15,14 @@ namespace Compression
         {
             tree = new HuffmanTree();
         }
-        public override BitArray Compress(byte[] data)
+        public override BitArray Compress(byte[] data, String name)
         {
             tree.Build(data);
             return tree.Encode(data);
         }
-        public override byte[] Decompress(BitArray data)
+        public override byte[] Decompress(BitArray data, String name)
         {
             return tree.Decode(data);
-        }
-        public override List<int> Compress(List<byte> source)
-        {
-            throw new NotImplementedException();
-        }
-        public override List<byte> Decompress(List<int> comp)
-        {
-            throw new NotImplementedException();
         }
     }
 }

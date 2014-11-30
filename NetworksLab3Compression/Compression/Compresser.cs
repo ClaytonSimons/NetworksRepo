@@ -9,9 +9,7 @@ namespace Compression
 {
     public abstract class Compresser
     {
-        abstract public BitArray Compress(byte[] data);
-        abstract public byte[] Decompress(BitArray data);
-        abstract public List<int> Compress(List<byte> source);
-        abstract public List<byte> Decompress(List<int> comp);
+        abstract public BitArray Compress(byte[] data, String name);
+        abstract public byte[] Decompress(BitArray data, String name);
     }
 }

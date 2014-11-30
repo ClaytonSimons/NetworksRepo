@@ -35,7 +35,7 @@ namespace NetworksLab3Compression
                     List<byte> ne = new List<byte>();
                     if (setCompressor())
                     {
-                        BitArray arry = comp.Compress(data);
+                        BitArray arry = comp.Compress(data, file);
                         resultdata = new byte[(arry.Length - 1) / 8 + 1];
                         arry.CopyTo(resultdata, 0);
                         File.WriteAllBytes(compressedName, resultdata);
@@ -75,7 +75,7 @@ namespace NetworksLab3Compression
                     if (setCompressor())
                     {
                         BitArray dat = new BitArray(data);
-                        resultdata = comp.Decompress(dat);
+                        resultdata = comp.Decompress(dat, file);
                         File.WriteAllBytes(decompressedName, resultdata);
                     }
 
