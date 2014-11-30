@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Compression
 {
+    /// <summary>
+    /// A node for the huffman tree.
+    /// </summary>
     public class HuffNode
     {
         public byte Symbol { get; set; }

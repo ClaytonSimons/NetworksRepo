@@ -1,14 +1,3 @@
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Debug\NetworksLab3Compression.exe.config
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Debug\NetworksLab3Compression.exe
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Debug\NetworksLab3Compression.pdb
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Debug\Compression.dll
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Debug\Compression.pdb
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.csprojResolveAssemblyReference.cache
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.ClientForm.resources
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.Properties.Resources.resources
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.csproj.GenerateResource.Cache
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.exe
-C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.pdb
 C:\Users\Clay\Desktop\NetworksLab3Compression\NetworksLab3Compression\bin\Debug\NetworksLab3Compression.exe.config
 C:\Users\Clay\Desktop\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.exe
 C:\Users\Clay\Desktop\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.pdb

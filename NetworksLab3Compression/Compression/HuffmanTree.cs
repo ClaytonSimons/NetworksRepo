@@ -11,11 +11,17 @@ using System.IO;
 
 namespace Compression
 {
+    /// <summary>
+    /// Contains algorithms and structure for huffman code.
+    /// </summary>
     public class HuffmanTree
     {
         private List<HuffNode> nodes = new List<HuffNode>();
         public HuffNode Root { get; set; }
         public Dictionary<byte, int> Frequencies = null;
+        /// <summary>
+        /// Builds tree with already constructed frequencies table.
+        /// </summary>
         public void Build()
         {
             foreach (KeyValuePair<byte, int> symbol in Frequencies)
@@ -54,6 +60,10 @@ namespace Compression
 
             }
         }
+        /// <summary>
+        /// Builds tree.
+        /// </summary>
+        /// <param name="source"></param>
         public void Build(byte[] source)
         {
             Frequencies = new Dictionary<byte, int>();
@@ -195,7 +205,11 @@ namespace Compression
 
             return decoded.ToArray();
         }
-
+        /// <summary>
+        /// Check if node is a leaf node.
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public bool IsLeaf(HuffNode node)
         {
             return (node.Left == null && node.Right == null);

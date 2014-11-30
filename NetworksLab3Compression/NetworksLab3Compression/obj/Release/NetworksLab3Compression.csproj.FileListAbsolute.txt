@@ -1,0 +1,11 @@
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Release\NetworksLab3Compression.exe.config
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Release\NetworksLab3Compression.exe
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Release\NetworksLab3Compression.pdb
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Release\Compression.dll
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\bin\Release\Compression.pdb
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Release\NetworksLab3Compression.csprojResolveAssemblyReference.cache
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Release\NetworksLab3Compression.ClientForm.resources
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Release\NetworksLab3Compression.Properties.Resources.resources
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Release\NetworksLab3Compression.csproj.GenerateResource.Cache
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Release\NetworksLab3Compression.exe
+C:\Users\Clay\Documents\GitHub\NetworksRepo\NetworksLab3Compression\NetworksLab3Compression\obj\Release\NetworksLab3Compression.pdb

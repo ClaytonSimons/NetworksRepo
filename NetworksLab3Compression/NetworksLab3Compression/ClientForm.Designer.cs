@@ -31,11 +31,9 @@
             this.serverAddressTxt = new System.Windows.Forms.TextBox();
             this.serverAdressLbl = new System.Windows.Forms.TextBox();
             this.huffmanRadBtn = new System.Windows.Forms.RadioButton();
-            this.lzRadBtn = new System.Windows.Forms.RadioButton();
-            this.runLengthRadBtn = new System.Windows.Forms.RadioButton();
-            this.arithmeticRadBtn = new System.Windows.Forms.RadioButton();
             this.compBtn = new System.Windows.Forms.Button();
             this.decompBtn = new System.Windows.Forms.Button();
+            this.FeedbackTxt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // serverAddressTxt
@@ -58,7 +56,7 @@
             // huffmanRadBtn
             // 
             this.huffmanRadBtn.AutoSize = true;
-            this.huffmanRadBtn.Location = new System.Drawing.Point(260, 39);
+            this.huffmanRadBtn.Location = new System.Drawing.Point(272, 53);
             this.huffmanRadBtn.Name = "huffmanRadBtn";
             this.huffmanRadBtn.Size = new System.Drawing.Size(93, 17);
             this.huffmanRadBtn.TabIndex = 2;
@@ -66,44 +64,11 @@
             this.huffmanRadBtn.Text = "Huffman Code";
             this.huffmanRadBtn.UseVisualStyleBackColor = true;
             // 
-            // lzRadBtn
-            // 
-            this.lzRadBtn.AutoSize = true;
-            this.lzRadBtn.Location = new System.Drawing.Point(260, 62);
-            this.lzRadBtn.Name = "lzRadBtn";
-            this.lzRadBtn.Size = new System.Drawing.Size(77, 17);
-            this.lzRadBtn.TabIndex = 3;
-            this.lzRadBtn.TabStop = true;
-            this.lzRadBtn.Text = "Lempel-Ziv";
-            this.lzRadBtn.UseVisualStyleBackColor = true;
-            // 
-            // runLengthRadBtn
-            // 
-            this.runLengthRadBtn.AutoSize = true;
-            this.runLengthRadBtn.Location = new System.Drawing.Point(260, 86);
-            this.runLengthRadBtn.Name = "runLengthRadBtn";
-            this.runLengthRadBtn.Size = new System.Drawing.Size(81, 17);
-            this.runLengthRadBtn.TabIndex = 4;
-            this.runLengthRadBtn.TabStop = true;
-            this.runLengthRadBtn.Text = "Run-Length";
-            this.runLengthRadBtn.UseVisualStyleBackColor = true;
-            // 
-            // arithmeticRadBtn
-            // 
-            this.arithmeticRadBtn.AutoSize = true;
-            this.arithmeticRadBtn.Location = new System.Drawing.Point(260, 109);
-            this.arithmeticRadBtn.Name = "arithmeticRadBtn";
-            this.arithmeticRadBtn.Size = new System.Drawing.Size(99, 17);
-            this.arithmeticRadBtn.TabIndex = 5;
-            this.arithmeticRadBtn.TabStop = true;
-            this.arithmeticRadBtn.Text = "Arithmetic Code";
-            this.arithmeticRadBtn.UseVisualStyleBackColor = true;
-            // 
             // compBtn
             // 
             this.compBtn.Location = new System.Drawing.Point(7, 53);
             this.compBtn.Name = "compBtn";
-            this.compBtn.Size = new System.Drawing.Size(114, 70);
+            this.compBtn.Size = new System.Drawing.Size(114, 24);
             this.compBtn.TabIndex = 6;
             this.compBtn.Text = "Compress";
             this.compBtn.UseVisualStyleBackColor = true;
@@ -113,22 +78,30 @@
             // 
             this.decompBtn.Location = new System.Drawing.Point(127, 53);
             this.decompBtn.Name = "decompBtn";
-            this.decompBtn.Size = new System.Drawing.Size(106, 70);
+            this.decompBtn.Size = new System.Drawing.Size(106, 24);
             this.decompBtn.TabIndex = 7;
             this.decompBtn.Text = "Decompress";
             this.decompBtn.UseVisualStyleBackColor = true;
             this.decompBtn.Click += new System.EventHandler(this.decompBtn_Click);
             // 
+            // FeedbackTxt
+            // 
+            this.FeedbackTxt.BackColor = System.Drawing.SystemColors.Control;
+            this.FeedbackTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FeedbackTxt.ForeColor = System.Drawing.SystemColors.Control;
+            this.FeedbackTxt.Location = new System.Drawing.Point(26, 31);
+            this.FeedbackTxt.Name = "FeedbackTxt";
+            this.FeedbackTxt.Size = new System.Drawing.Size(144, 13);
+            this.FeedbackTxt.TabIndex = 8;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 129);
+            this.ClientSize = new System.Drawing.Size(377, 87);
+            this.Controls.Add(this.FeedbackTxt);
             this.Controls.Add(this.decompBtn);
             this.Controls.Add(this.compBtn);
-            this.Controls.Add(this.arithmeticRadBtn);
-            this.Controls.Add(this.runLengthRadBtn);
-            this.Controls.Add(this.lzRadBtn);
             this.Controls.Add(this.huffmanRadBtn);
             this.Controls.Add(this.serverAdressLbl);
             this.Controls.Add(this.serverAddressTxt);
@@ -144,11 +117,9 @@
         private System.Windows.Forms.TextBox serverAddressTxt;
         private System.Windows.Forms.TextBox serverAdressLbl;
         private System.Windows.Forms.RadioButton huffmanRadBtn;
-        private System.Windows.Forms.RadioButton lzRadBtn;
-        private System.Windows.Forms.RadioButton runLengthRadBtn;
-        private System.Windows.Forms.RadioButton arithmeticRadBtn;
         private System.Windows.Forms.Button compBtn;
         private System.Windows.Forms.Button decompBtn;
+        private System.Windows.Forms.TextBox FeedbackTxt;
     }
 }
 

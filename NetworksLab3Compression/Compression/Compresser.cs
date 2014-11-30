@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace Compression
 {
+    /// <summary>
+    /// Abstract compression class.
+    /// </summary>
     public abstract class Compresser
     {
-        abstract public BitArray Compress(byte[] data, String name);
-        abstract public byte[] Decompress(BitArray data, String name);
+        abstract public BitArray Compress(byte[] data);
+        abstract public byte[] Decompress(BitArray data);
     }
 }

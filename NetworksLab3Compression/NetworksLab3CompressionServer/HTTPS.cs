@@ -13,6 +13,9 @@ using Compression;
 
 namespace NetworksLab3CompressionServer
 {
+    /// <summary>
+    /// Simple remoting class/server.
+    /// </summary>
     public class HTTPS
     {
         static String indexfile = "index.html";

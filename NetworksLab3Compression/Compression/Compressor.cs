@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Compression
 {
+    /// <summary>
+    /// A object setup to use multiple algorithms, but only one is available.
+    /// </summary>
     public class Compressor : System.MarshalByRefObject
     {
         Compresser comp;
@@ -25,18 +28,18 @@ namespace Compression
                 answer = true;
             return answer;
         }
-        public BitArray Compress(byte[] data, String name)
+        public BitArray Compress(byte[] data)
         {
             BitArray answer = null;
             if(comp != null)
-                answer = comp.Compress(data, name);
+                answer = comp.Compress(data);
             return answer;
         }
-        public byte[] Decompress(BitArray data, String name)
+        public byte[] Decompress(BitArray data)
         {
             byte[] answer = null;
             if(comp != null)
-                answer = comp.Decompress(data, name);
+                answer = comp.Decompress(data);
             return answer;
         }
     }
