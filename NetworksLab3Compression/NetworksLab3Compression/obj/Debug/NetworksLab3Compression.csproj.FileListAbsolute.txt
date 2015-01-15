@@ -1,3 +1,0 @@
-C:\Users\Clay\Desktop\NetworksLab3Compression\NetworksLab3Compression\bin\Debug\NetworksLab3Compression.exe.config
-C:\Users\Clay\Desktop\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.exe
-C:\Users\Clay\Desktop\NetworksLab3Compression\NetworksLab3Compression\obj\Debug\NetworksLab3Compression.pdb
